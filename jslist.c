@@ -3,7 +3,7 @@
  * The ouput format is "index:JoystickName".
  * It returns a non-zero value if no joystick was found; otherwise, zero.
  *
- * To compile (libsdl2 is installed by default on RetroPie):
+ * To compile (libsdl2 is installed by default on ARES):
  * [prompt]$ gcc jslist.c -o jslist $(sdl2-config --cflags --libs)
  */
 

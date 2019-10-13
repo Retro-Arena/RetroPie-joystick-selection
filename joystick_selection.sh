@@ -25,7 +25,7 @@
 #   inifuncs:   a set of useful bash functions to manage config files
 #               (it's used here to manipulate retroarch.cfg like files,
 #               if you have RetroPie installed, the you have inifuncs
-#               at /opt/retropie/lib/inifuncs.sh).
+#               at /opt/ares/lib/inifuncs.sh).
 #   runcommand: actually the dependency is the runcommand-onstart feature.
 #               This feature was added to the RetroPie's runcommand script
 #               in Aug/2016. This is a dependency only to
@@ -55,7 +55,7 @@
 dialog --title 'Joystick Selection' --infobox 'Please wait...' 0 0
 
 # get the functions and global variables (the jsfuncs sources inifuncs)
-source "/opt/retropie/supplementary/joystick-selection/jsfuncs.sh"
+source "/opt/ares/supplementary/joystick-selection/jsfuncs.sh"
 
 # checking if jslist exists and is executable
 if [[ ! -x "$jslist_exe" ]]; then
@@ -64,7 +64,7 @@ if [[ ! -x "$jslist_exe" ]]; then
 fi
 
 # checking for runcommand-menu feature
-jsonmenu="/opt/retropie/configs/all/runcommand-menu/select joystick.sh"
+jsonmenu="/opt/ares/configs/all/runcommand-menu/select joystick.sh"
 if [[ ! -s "$jsonmenu" ]]; then
     mkdir -p "$(dirname "$jsonmenu")"
     cat > "$jsonmenu" << _EoF_
@@ -72,7 +72,7 @@ system="\$1"
 game="\$(basename "\$3")"
 ON_MENU=1
 
-source "/opt/retropie/supplementary/joystick-selection/jsfuncs.sh"
+source "/opt/ares/supplementary/joystick-selection/jsfuncs.sh"
 
 system_js_select_menu "\$system" || exit 0
 dialog --title " Launch the game? " --yesno "\nDo you want to launch \"\$game\" now?\n\n" 0 0 >/dev/tty \

@@ -12,14 +12,14 @@
 user="$SUDO_USER"
 [[ -z "$user" ]] && user=$(id -un)
 
-readonly rootdir="/opt/retropie"
+readonly rootdir="/opt/ares"
 readonly configdir="$rootdir/configs"
 readonly global_jscfg="$configdir/all/joystick-selection.cfg"
 readonly jslist_exe="$rootdir/supplementary/joystick-selection/jslist"
 readonly jslist_file=$(mktemp /tmp/jslist.XXXX)
 readonly temp_file=$(mktemp /tmp/deleteme.XXXX)
 
-# getting some usefull functions from RetroPie
+# getting some usefull functions from ARES
 source "$rootdir/lib/inifuncs.sh"
 
 # BYNAME is a flag to indicate the using of "joystick selection by name" method.
@@ -79,15 +79,15 @@ function check_byname_is_ok() {
           --yesno \
 "It seems that your runcommand is outdated!
 
-The joystick selection by name method depends on an updated version of RetroPie's runcommand.
+The joystick selection by name method depends on an updated version of ARES's runcommand.
 
-You must update it via retropie_setup.sh to use joystick selection by name method.
+You must update it via ares_setup.sh to use joystick selection by name method.
 
-Short way: execute retropie_setup.sh and choose \"Update RetroPie-Setup script\". And then go to
+Short way: execute ares_setup.sh and choose \"Update ARES-Setup script\". And then go to
 \"Manage Packages\" -> \"Manage core packages\" -> \"runcommand\" -> \"Update from binary\"
 
 Detailed instructions can be found here:
-https://github.com/RetroPie/RetroPie-Setup/wiki/Updating-RetroPie
+https://github.com/Retro-Arena/ARES-Setup/wiki/Updating-ARES
 
 Choose \"Yes\" to exit or \"No\" to continue using the joystick selection by index method." \
           0 0 >/dev/tty || return $?
